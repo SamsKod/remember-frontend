@@ -1,101 +1,104 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
 
-Welcome,
+# Remember
 
-This is the Code Institute student template for React apps on the Codeanywhere IDE. We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
 
-You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Codeanywhere and the extensions we use. Some of this information has been updated since the video content was created. The last update to this file was: **19th April, 2023**
+### Small screens (iPhone 4)
+![Screenshot](assets/images/screenshot_iphone4.png)
 
-## Codeanywhere Reminders
+### Middle large screens (iPad Air)
+![Screenshot](assets/images/screenshot_air.png)
 
-In Codeanywhere you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
 
-To log into the Heroku toolbelt CLI:
+### Large screens (Desktop)
+![HomeScreenshot](assets/images/screenshot_home.png)
 
-1. Log in to your Heroku account and go to _Account Settings_ in the menu under your avatar.
-2. Scroll down to the _API Key_ and click _Reveal_
-3. Copy the key
-4. In Codeanywhere, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
 
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidentally make it public then you can create a new one with _Regenerate API Key_.
+# Features
 
----
+## Existing Features
+* Home page
+  * Navigation Bar
+* About page
+  * Short description for my family members.
+* Profile link
+  * If signed in a link to the profile form.
+* Sign In link
+  * Link to sign in form.
+* Sign out link
+  * If signed in a link to sign out.
 
-Happy coding!
+### Navigation Bar
+![navbarscreenshot](assets/images/screenshot_navbar1.png)
 
-# Getting Started with Create React App
+- Featured on all pages, the full responsive navigation bar includes links to the Logo, Home page, About, Calendar and Sign in page and is identical in each page to allow for easy navigation.
+- When signed in there are more links in the navigation bar, Profile and Sign Out.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+![navbarscreenshot](assets/images/screenshot_navbar2.png)
 
-## Available Scripts
 
-In the project directory, you can run:
+### Landing page
+![HomeScreenshot](assets/images/screenshot_home.png)
 
-### `npm install`
+### About page
+![Screenshot](assets/images/screenshot_about.png)
 
-Installs the required npm packages.
+The about page gives information about our wonderful summerplace. 
 
-### `npm start`
+### 
 
-Runs the app in the development mode.\
-Open port 3000 to view it in the browser.
+### Sign in page
+![Screenshot](assets/images/screenshot_signin.png)
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+![Screenshot](assets/images/screenshot_signin_wrong.png)
 
-### `npm test`
+### Signed out page
+![Screenshot](assets/images/screenshot_signout.png)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### 
+### Profile page
+![HomeScreenshot](assets/images/screenshot_profile.png)
 
-### `npm run build`
+### Update profile page
+![HomeScreenshot](assets/images/screenshot_accountupdate.png)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Admin page
+![HomeScreenshot](assets/images/screenshot_admin.png)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Starting point
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## Features left to implement
+- 
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+# Testing
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
-## Learn More
+# Validator Testing
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### HTML
+No errors were returned when passing through the official W3C validator.
+### CSS
+No errors were found when passing through the official (Jigsaw) validator. Although there are still some css issues to handle because different browsers render css in different ways. Chrome works best for this application. 
+### Accessibility
+The Lighthouse test tool show good result in accesibility
+![Screenshot](assets/images/screenshot_lighthouse.png)
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+# Bugs
+ * 
+# Deployment
+The site was deployed on Heroku cloud service with a Postgres database on ElephantSQL cloud service and static files is handled by cloud service Cloudinary.
+App is deployed as follows:
+* Heroku is connected to GitHub repository Samssite.
+* Under settings in Heroku config vars is set for connection to the Elephant and Cloudinary. Port and Django secret key is also set.
+* In deploy section in Heroku choose branch main to deploy and press button "Deploy Branch". Look in the log that everything is installed correct.
 
-### Code Splitting
+The live link can be found here - 
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+# Credits
+Example code and design is used from:
+- 
 
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
-# remember-frontend
+# Media
+My photos.
