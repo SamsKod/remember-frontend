@@ -1,0 +1,127 @@
+import React, { useState } from "react";
+import imageCompression from "browser-image-compression";
+
+import Form from "react-bootstrap/Form";
+import Button from "react-bootstrap/Button";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
+import Container from "react-bootstrap/Container";
+import Image from "react-bootstrap/Image";
+
+import Upload from "../assets/upload.png";
+import Asset from "../components/Asset";
+
+import styles from "../styles/PostCreateEditForm.module.css";
+import appStyles from "../App.module.css";
+import btnStyles from "../styles/Button.module.css";
+
+function ImageCompressor() {
+  const [errors, setErrors] = useState({});
+
+  const [ uploadImage, setUploadImage ] = useState(false);
+  const [ clicked, setClicked ] = useState("");
+  const [ compressedLink, setCompressedLink] = useState("http://navparivartan.in/wp-content/uploads/2018/11/placeholder.png");
+  const [ imageDetails, setImageDetails] = useState({
+    originalImage: "",
+    originalLink: "",
+    outputFileName: ""
+  });
+
+  function handleClick(e) {
+    const [ imageFile ] = e.target.files;
+    
+    setUploadImage(true);
+    setImageDetails({
+      originalImage: imageFile,
+      originalLink: URL.createObjectURL(imageFile),
+      outputFileName: imageFile.name
+    });
+  }
+
+  async function handleCompress(e) {
+    e.preventDefault();
+
+    const options = {
+      maxSizeMB: 1,
+      maxWidthOrHeight: 500,
+      useWebWorker: true
+    };
+
+    if (options.maxSizeMB >= imageDetails.originalImage.size / 1024) {
+      alert("Image is too small, can't be Compressed!");
+      return 0;
+    }
+
+    const output = await imageCompression(imageDetails.originalImage, options);
+    const downloadLink = URL.createObjectURL(output);
+    setCompressedLink(downloadLink);
+    setClicked(true);
+
+    return 1;
+  }
+
+  return (
+  
+    <Form>
+      <Row>
+        <Col className="py-2 p-0 p-md-2" md={7} lg={8}>
+          <Container
+            className={`${appStyles.Content} ${styles.Container} d-flex flex-column justify-content-center`}
+          >
+            <Form.Group className="text-center">
+              {uploadImage ? (
+                <>
+                  <figure>
+                    <Image className={appStyles.Image} src={imageDetails} rounded />
+                  </figure>
+                  <div>
+                    <Form.Label
+                      className={`${btnStyles.Button} ${btnStyles.Blue} btn`}
+                      htmlFor="image-upload"
+                    >
+                      Change the image
+                    </Form.Label>
+                  </div>
+                </>
+              ) : (
+                <Form.Label
+                  className="d-flex justify-content-center"
+                  htmlFor="image-upload"
+                >
+                  <Asset
+                    src={upload}
+                    message="Click or tap to upload an image"
+                  />
+                </Form.Label>
+              )}
+              <Form.File
+                id="image-upload"
+                accept="image/*"
+                onClick={handleCompress}
+              />
+            </Form.Group>
+            {/*<div className="d-md-none">{textFields}</div>*/}
+          </Container>
+        </Col>
+        <Col md={5} lg={4} className="d-none d-md-block p-0 p-md-2">
+          <Container className={appStyles.Content}>
+          <div className="col-xl-4 col-lg-4 col-md-12 mb-5 mt-5 col-sm-12 d-flex justify-content-center align-items-baseline">
+          <br />
+          {imageDetails.outputFileName && (
+          <button
+            type="button"
+            className=" btn btn-dark"
+            onClick={handleCompress}
+          >
+          Compress
+          </button>
+        )}
+      </div>
+    </Container>
+        </Col>
+      </Row>
+    </Form>
+  );
+}
+
+export default ImageCompressor;
