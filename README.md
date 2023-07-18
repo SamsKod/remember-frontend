@@ -87,18 +87,16 @@ The Lighthouse test tool show good result in accesibility
 # Bugs
  * 
 # Deployment
-This site is deployed on Heroku cloud service both the django-api and the react app. A Postgres database on ElephantSQL cloud service is used and static files is handled by cloud service Cloudinary.
+This React-application is deployed on Heroku cloud service. A RESTful api is used for connection to a backend service bulid on Django REST Framework.
 
 Steps för deployment:
 
-* Accounts was setup at Heroku, ElephantSQL and Cloudinary.
-* After Django app with Django REST Framework is setup a connection to Cloudinary is configured for storage of media files. Connection to Postgres SQL database att ElephantSQL is setup for database storage.
-* Code is commited to Git and then push top Github.
-* On Heroku a new app is created    
-* Under settings in Heroku config vars is set for connection to the Elephant and Cloudinary. Port and Django secret key is also set.
-* In deploy section in Heroku choose branch main to deploy and press button "Deploy Branch". Look in the log that everything is installed correct.
+* Account was setup at Heroku
+* Code is commited to Git and then pushed to Github
+* On Heroku a new app is created and in settings in Heroku config vars is set for connection to Django RESTapi, remember-backend-ff8df02164f2.herokuapp.com
+* Heroku App is connected to github repository remember-backend and then deployed to Heroku.
 
-The live link can be found here - 
+The live link can be found here - https://remember-frontend-b9e629f40656.herokuapp.com/
 
 # Credits
 Example code and design is used from:
