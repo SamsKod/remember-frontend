@@ -28,8 +28,9 @@ function PostCreateForm() {
     title: "",
     content: "",
     image: "",
+    tags: "",
   });
-  const { title, content, image } = postData;
+  const { title, content, image, tags } = postData;
 
   const imageInput = useRef(null);
   const history = useHistory();
@@ -58,6 +59,7 @@ function PostCreateForm() {
     formData.append("title", title);
     formData.append("content", content);
     formData.append("image", imageInput.current.files[0]);
+    formData.append("tags", tags);
 
     try {
       const { data } = await axiosReq.post("/posts/", formData);
@@ -102,6 +104,15 @@ function PostCreateForm() {
           {message}
         </Alert>
       ))}
+      <Form.Group>
+        <Form.Label>tags:</Form.Label>
+        <Form.Control
+          type="text"
+          name="tags"
+          value={tags}
+          onChange={handleChange}
+        />
+      </Form.Group>
 
       <Button
         className={`${btnStyles.Button} ${btnStyles.Blue}`}
