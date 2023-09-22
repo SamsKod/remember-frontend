@@ -53,7 +53,7 @@ function PostsPage({ message, filter = "" }) {
     <Row className="h-100">
       <Col className="py-2 p-0 p-lg-2" lg={8}>
         <PopularProfiles mobile />
-        <PostTags mobile/>
+        <PostTags mobile onClick={(tag) => setQuery(tag)}/>
         <i className={`fas fa-search ${styles.SearchIcon}`} />
         <Form
           className={styles.SearchBar}
@@ -94,7 +94,7 @@ function PostsPage({ message, filter = "" }) {
       </Col>
       <Col md={4} className="d-none d-lg-block p-0 p-lg-2">
         <PopularProfiles />
-        <PostTags />
+        <PostTags onClick={(tag) => setQuery(tag)}/>
       </Col>
     </Row>
   );

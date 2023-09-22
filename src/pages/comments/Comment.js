@@ -17,6 +17,7 @@ const Comment = (props) => {
     updated_at,
     content,
     id,
+    post,
     setPost,
     setComments,
   } = props;
@@ -57,6 +58,7 @@ const Comment = (props) => {
           {showEditForm ? (
             <CommentEditForm
               id={id}
+              post={post}
               profile_id={profile_id}
               content={content}
               profileImage={profile_image}

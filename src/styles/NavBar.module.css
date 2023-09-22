@@ -5,6 +5,11 @@
 
 .NavLink {
   padding: 5px;
+  color: black;
+}
+.NavLink:hover {
+  color:#aa007e;
+  transition: color ease-in-out 0.3s;
 }
 
 .Active i {
