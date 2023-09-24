@@ -3,6 +3,7 @@
 Librarys:
 * React Bootstrap library,
 * React Router
+* Axios library
 
 Styling:
 * Font Awasome Icons,
