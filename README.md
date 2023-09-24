@@ -2,6 +2,7 @@
 
 Librarys:
 * React Bootstrap library,
+* React Router
 
 Styling:
 * Font Awasome Icons,
