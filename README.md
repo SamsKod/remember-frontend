@@ -1,5 +1,12 @@
 # remember-frontend
 
+Librarys:
+* React Bootstrap library,
+* React Router
+* Axios library
+
+Styling:
+* Font Awasome Icons,
 
 ### Small screens (iPhone 4)
 ![Screenshot](assets/images/screenshot_iphone4.png)
