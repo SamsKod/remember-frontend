@@ -1,4 +1,5 @@
-   .TagBadge:hover {
+.TagBadge:hover {
     cursor: pointer;
     color: black;
-  }
+}
+

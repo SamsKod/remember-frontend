@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "../../styles/Post.module.css";
 import { useCurrentUser } from "../../contexts/CurrentUserContext";
-import { Card, Media, OverlayTrigger, Tooltip } from "react-bootstrap";
+import { Card, Media, OverlayTrigger, Tooltip, Badge } from "react-bootstrap";
 import { Link, useHistory } from "react-router-dom";
 import Avatar from "../../components/Avatar";
 import { axiosRes } from "../../api/axiosDefaults";
@@ -99,7 +99,7 @@ const Post = (props) => {
       <Card.Body>
         {title && <Card.Title className="text-center">{title}</Card.Title>}
         {content && <Card.Text>{content}</Card.Text>}
-        {tags && <Card.Text>{tags}</Card.Text>}
+        {tags && <Badge>{tags}</Badge>}
         <div className={styles.PostBar}>
           {is_owner ? (
             <OverlayTrigger

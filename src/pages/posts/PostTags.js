@@ -40,7 +40,6 @@ const PostTags = ({ mobile, onClick }) => {
         mobile && "d-lg-none text-center mb-3"
       }`}
     >
-    <p>Tags:</p>
     {tags.results.map((tag, index) => (
       <Badge key={index} pill variant="info"
        className={`${postTagsStyles.TagBadge} mr-2`}
