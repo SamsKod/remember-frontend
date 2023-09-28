@@ -36,7 +36,9 @@ function PostEditForm() {
         const { data } = await axiosReq.get(`/posts/${id}/`);
         const { title, content, image, is_owner, tags } = data;
 
-        is_owner ? setPostData({ title, content, image, tags }) : history.push("/");
+        is_owner
+          ? setPostData({ title, content, image, tags })
+          : history.push("/");
       } catch (err) {
         console.log(err);
       }
@@ -127,14 +129,14 @@ function PostEditForm() {
         />
       </Form.Group>
 
+      <Button className={`${btnStyles.Button} ${btnStyles.Black}`} type="submit">
+        save
+      </Button>
       <Button
         className={`${btnStyles.Button} ${btnStyles.Blue}`}
         onClick={() => history.goBack()}
       >
         cancel
-      </Button>
-      <Button className={`${btnStyles.Button} ${btnStyles.Blue}`} type="submit">
-        save
       </Button>
     </div>
   );

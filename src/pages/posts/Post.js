@@ -1,5 +1,6 @@
 import React from "react";
 import styles from "../../styles/Post.module.css";
+import postTagsStyles from "../../styles/PostTags.module.css";
 import { useCurrentUser } from "../../contexts/CurrentUserContext";
 import { Card, Media, OverlayTrigger, Tooltip, Badge } from "react-bootstrap";
 import { Link, useHistory } from "react-router-dom";
@@ -78,7 +79,7 @@ const Post = (props) => {
     <Card className={styles.Post}>
       <Card.Body>
         <Media className="align-items-center justify-content-between">
-          <Link to={`/profiles/${profile_id}`}>
+          <Link className={styles.ProfileLink} to={`/profiles/${profile_id}`}>
             <Avatar src={profile_image} height={55} />
             {owner}
           </Link>
@@ -99,7 +100,10 @@ const Post = (props) => {
       <Card.Body>
         {title && <Card.Title className="text-center">{title}</Card.Title>}
         {content && <Card.Text>{content}</Card.Text>}
-        {tags && <Badge>{tags}</Badge>}
+        {tags && <Badge pill variant="info"
+       className={`${postTagsStyles.TagBadge} mr-2`}>{tags}
+       </Badge>}
+
         <div className={styles.PostBar}>
           {is_owner ? (
             <OverlayTrigger

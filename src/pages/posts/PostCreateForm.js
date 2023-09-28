@@ -105,7 +105,7 @@ function PostCreateForm() {
         </Alert>
       ))}
       <Form.Group>
-        <Form.Label>tags:</Form.Label>
+        <Form.Label>tag:</Form.Label>
         <Form.Control
           type="text"
           name="tags"
@@ -114,14 +114,14 @@ function PostCreateForm() {
         />
       </Form.Group>
 
+       <Button className={`${btnStyles.Button} ${btnStyles.Blue}`} type="submit">
+        create
+      </Button>
       <Button
         className={`${btnStyles.Button} ${btnStyles.Blue}`}
         onClick={() => history.goBack()}
       >
         cancel
-      </Button>
-      <Button className={`${btnStyles.Button} ${btnStyles.Blue}`} type="submit">
-        create
       </Button>
     </div>
   );
