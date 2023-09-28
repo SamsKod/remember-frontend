@@ -100,7 +100,7 @@ const Post = (props) => {
       <Card.Body>
         {title && <Card.Title className="text-center">{title}</Card.Title>}
         {content && <Card.Text>{content}</Card.Text>}
-        {tags && <Badge pill variant="info" mr-2`}>{tags}</Badge>}
+        {tags && <Badge pill variant="info" mr-2}>{tags}</Badge>}
 
         <div className={styles.PostBar}>
           {is_owner ? (
